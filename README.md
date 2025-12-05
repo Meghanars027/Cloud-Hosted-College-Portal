@@ -8,13 +8,13 @@ Features:
 4.Fully deployed using Firebase Hosting
 5.Lightweight and easy to integrate with other college modules
 
-Tech Stack
+Tech Stack:
 HTML, CSS, JavaScript – Frontend
 Firebase Firestore – NoSQL database
 Firebase Hosting – Cloud deployment
 GitHub – Version control & project management
 
-Project Structure
+Project Structure:
 /project-folder
 │── index.html
 │── style.css
@@ -23,20 +23,20 @@ Project Structure
 │── README.md
 │── .gitignore
 
-How It Works
+How It Works:
 1.User submits a message using the web form
 2.The message is sent to Firestore
 3.Admin can view messages from the Firebase Console
 4.The entire website is hosted on Firebase Hosting
 
-Deployment
+Deployment:
 1.The project is deployed using:
   firebase deploy
 2.You can update anytime using:
   firebase deploy --only hosting
 
-Usage
-College websites
-Feedback collection portals
-Contact/Query submission systems
-Lightweight cloud-based message management
+Usage:
+1.College websites
+2.Feedback collection portals
+3.Contact/Query submission systems
+4.Lightweight cloud-based message management
