@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .contact-col form button[disabled] {
+            background-color: #ccc;
+            cursor: not-allowed;
+            color: #555;
+        }
+
+        .contact-col form button.loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .contact-col form button.loading::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            border: 2px solid #fff;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .contact-col form button.submitted {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="eduford_img\CollegeLogo.png" alt="College Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Contact Us</h1>
+    </section>
+
+    <section class="location">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.103797987939!2d76.6324187748128!3d12.33338243047866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b6a69b00198b8b9%3A0x800c4817e5899c1c!2sATME%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-home"></i>
+                    <span>
+                        <h5>ATME College of Engineering</h5>
+                        <p>Kankpura Road, Mysuru 570028 Karnataka, India.</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span>
+                        <h5>+91 821 247 1475</h5>
+                        <p>Monday to Saturday 9 Am to 5 Pm</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope-o"></i>
+                    <span>
+                        <h5>info@atme.ac.in</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" placeholder="Enter email address" required>
+                    <input type="text" name="subject" placeholder="Enter your subject" required>
+                    <textarea rows="8" name="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="hero-btn red-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>At ATME College of Engineering, we're passionate about empowering young minds and shaping the future of
+            technology.</p>
+        <div class="icons">
+            <a href="https://www.instagram.com/atmeceofficial/"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/school/atme-college-of-engineering/"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+ 
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
+        import { getDatabase, ref, push, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js"; // Import Realtime Database functions
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBLt5Y36NqHWShkrG1D2nXbaD62TP9o9t8",
+            authDomain: "cloudcollegewebsite.firebaseapp.com",
+            projectId: "cloudcollegewebsite",
+            storageBucket: "cloudcollegewebsite.firebasestorage.app",
+            messagingSenderId: "644134107566",
+            appId: "1:644134107566:web:e6070a3f3e1d006ceeb03f",
+            measurementId: "G-G9GSTBK674"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // Initialize Firebase Realtime Database
+        const database = getDatabase(app);
+
+        const contactForm = document.getElementById('contactForm');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            const nameInput = contactForm.querySelector('input[name="name"]');
+            const emailInput = contactForm.querySelector('input[name="email"]');
+            const subjectInput = contactForm.querySelector('input[name="subject"]');
+            const messageInput = contactForm.querySelector('textarea[name="message"]');
+
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const subject = subjectInput.value;
+            const message = messageInput.value;
+
+            // Disable the button and show loading state
+            submitButton.disabled = true;
+            submitButton.classList.add('loading');
+            submitButton.textContent = 'SENDING...';
+
+            // Create a reference to the Firebase Realtime Database
+            const messagesRef = ref(database, 'messages'); // 'messages' is the node where we'll store data
+
+            // Push the user's information to the database
+            push(messagesRef, {
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message,
+                    timestamp: serverTimestamp() // Add a timestamp
+                })
+                .then(() => {
+                    submitButton.classList.remove('loading');
+                    submitButton.classList.add('submitted');
+                    submitButton.textContent = 'SENT!';
+                    contactForm.reset(); // Clear the form
+                    // Optionally reset the button after a short delay
+                    setTimeout(() => {
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('submitted');
+                        submitButton.textContent = 'Send Message';
+                    }, 3000); // Reset after 3 seconds
+                })
+                .catch((error) => {
+                    console.error('Error sending message:', error);
+                    alert('Failed to send message. Please try again later.');
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('loading');
+                    submitButton.textContent = 'Send Message';
+                });
+        });
+    </script>
+
+</body>
+
+</html>

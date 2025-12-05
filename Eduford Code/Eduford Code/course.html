@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Website Design - Easy Tutorials</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://www.google.com/maps/place/ATME+College+of+Engineering/@12.251513,76.639861" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="eduford_img\CollegeLogo.png"></a>
+            <div class="nav-links" id="navLinks">  
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+            <h1>Our Courses</h1>
+    </section>
+    
+    
+<!---------- course ----------->
+    
+    <section class="course">
+        <h1>Courses We Offer</h1>
+        <p>The college provides modern infrastructure, industry-relevant courses, and a vibrant campus life for its students.</p>
+        <div class="row">
+            <div class="course-col">
+                <h3>BE</h3>
+                <p>The college provides Bachelor of Engineering (B.E.) courses in Computer Science and Engineering, Information Science and Engineering, Electronics and Communication Engineering, Mechanical Engineering, and Civil Engineering.
+                    These courses are designed to give students strong technical knowledge and hands-on experience.</p>
+            </div>
+            <div class="course-col">
+                <h3>MCA</h3>
+                <p>The Master of Computer Applications (MCA) program at ATME College of Engineering is designed to equip students with advanced knowledge and skills in computer science, programming, and software development. This 2-year postgraduate course focuses on preparing students for careers in software development, IT management, and system analysis by combining theoretical learning with practical experience.</p>
+            </div>
+            <div class="course-col">
+                <h3>MBA</h3>
+                <p>ATME offers MBA programs for students interested in management and leadership roles in the industry. These programs focus on developing professional skills and preparing students for competitive careers.</p>
+            </div>
+        </div>
+    </section>
+    <!--------Career-------->
+    <div class="faculty-details">
+        <h2>Faculty Details</h2>
+        <p>Meet our experienced professors who guide students.</p>
+    <div class="button-container">
+        <a href="https://atme.edu.in/cse-computer-science-design/" class="faculty-button">Faculty Info</a>
+    </div>
+    
+    <div class="button-container">
+        <a href="career.html" class="career-button">Career</a>
+    </div>
+    </div>
+    
+    
+<!---------- Facilities ---------->
+<section class="cta">
+    
+    <h1>Enroll For Our Various Courses</h1>
+     <a href="https://atme.edu.in/course-information/" class="hero-btn">ENROLL</a>
+ 
+</section>    
+<!-------- footer ---------->
+
+<section class="footer">
+    <h4>About Us</h4>
+    <p>At ATME College of Engineering, we're passionate about empowering young minds and shaping the future of technology.</p>
+    <div class="icons">
+        <a href="https://www.instagram.com/atmeceofficial/"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/school/atme-college-of-engineering/"><i class="fa fa-linkedin"></i></a>  
+    </div>
+</section> 
+  
+<!----JavaScript for toggle menu---->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-200px";
+    }
+</script>  
+    
+</body>
+</html>    
